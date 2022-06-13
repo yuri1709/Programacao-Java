@@ -13,11 +13,14 @@ import java.util.Random;
  * @author Yuri.Conder
  */
 public class InstanciaPessoa {
-  static boolean flag = true;        
+        
    
   public static void main (String[]args){
-       Pessoa p1 = new Pessoa();        
-       Acesso login = new Acesso();        
+      // toda variavel criada aqui é global. Se for criada dentro de um bloco ela é local.
+      Pessoa p1 = new Pessoa();        
+       Acesso login = new Acesso();
+       boolean flag1 = true; 
+       boolean isLogin = false;
         
                    
         //menu de opções
@@ -30,56 +33,61 @@ public class InstanciaPessoa {
                                                                 "0 - Sair\n"+
                                                                 "==============  \n"+
                                                                 "DIGITE SUA OPÇÃO NO ESPAÇO EM BANCO ABAIXO");  
-       
-        if(opcao.equals("2")){              
-                opcao = "1";                
-                flag = false;
-        }
-        
-        while( !opcao.equals("1") && !opcao.equals("2")) {
-            opcao = JOptionPane.showInputDialog( "Você deve estar logado para acessar as demais opções\n"
-                    + "1- LOGIN\n"+
-                      "2- CADASTRAR"); 
-            if(opcao.equals("2")){              
-                opcao = "1";                
-                flag = false;
-            }
-        }    
-                
-        switch(opcao) {
-            case "1":             
-                if (flag != false){
-                    String primeiroAcesso = JOptionPane.showInputDialog("É o seu primeiro acesso ?");               
-                    if (primeiroAcesso.equals("Sim") || primeiroAcesso.equals("sim")  || primeiroAcesso.equals("SIM") ){
-                         login.gerarLoginSenha(); 
-                    }else {                       
-                       login.validarAcesso(); 
-                    }                             
-                }else {                    
-                    login.gerarLoginSenha(); 
+                //condição se o usuário não estiver logado.
+                if (isLogin == false) { 
+                    if(opcao.equals("2")){              
+                            opcao = "1";                
+                            flag1 = false;
+                    }
+
+                    while( !opcao.equals("1") && !opcao.equals("2")) {
+                        opcao = JOptionPane.showInputDialog( "Você deve estar logado para acessar as demais opções\n"
+                                + "1- LOGIN\n"+
+                                  "2- CADASTRAR"); 
+                        if(opcao.equals("2")){              
+                            opcao = "1";                
+                            flag1 = false;
+                        }
+                    }    
+                } else { //Se o usuário estiver logado
+                    
                 }
                 
-            break;
+                
+                switch(opcao) {
+                    case "1":             
+                        if (flag1 != false || isLogin == false){
+                            String primeiroAcesso = JOptionPane.showInputDialog("É o seu primeiro acesso ?");               
+                            if (primeiroAcesso.equals("Sim") || primeiroAcesso.equals("sim")  || primeiroAcesso.equals("SIM") ){
+                                 login.gerarLoginSenha(); 
+                            }else {                       
+                               login.validarAcesso();
+                               isLogin = true;                    
+                            }                             
+                        }else {                    
+                            login.validarAcesso(); 
+                        }
 
-            case "2":
-              p1.calcularIMC();
-            break;
+                    break;
 
-            case "3":
-               p1.exibirCálculoIMC(); 
-            break;
-                      
-             case "0":                   
-                System.exit(0); 
-            break;
+                    case "2":
+                      p1.calcularIMC();
+                    break;
 
-            default:
-                JOptionPane.showMessageDialog(null, "OPÇÃO INVÁLIDA !!");
-            break;
-        }
-        resposta = JOptionPane.showInputDialog("DESEJA CONTINUAR?");
-    }
+                    case "3":
+                       p1.exibirCálculoIMC(); 
+                    break;
+
+                     case "0":                   
+                        System.exit(0); 
+                    break;
+
+                    default:
+                        JOptionPane.showMessageDialog(null, "OPÇÃO INVÁLIDA !!");
+                    break;
+                }
+                resposta = JOptionPane.showInputDialog("DESEJA CONTINUAR?");
+            }
      JOptionPane.showMessageDialog(null, "FIM DO PROGRAMA !!");
-   }
-            
+   }            
 }
