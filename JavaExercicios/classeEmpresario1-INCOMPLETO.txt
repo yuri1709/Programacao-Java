@@ -1,0 +1,29 @@
+  //Criamos uma variavel local para jogar dentro da classe Empregados1
+           String N = JOptionPane.showInputDialog("Digite o seu nome");
+           EMPR1.setNome(N);
+
+           //int MAT = Integer.parseInt(JOptionPane.showInputDialog("Digite sua MATRÍCULA"));
+           int MAT = rd.nextInt(5555);
+           EMPR1.setMatricula(MAT);
+
+           String CG = JOptionPane.showInputDialog("Digite o seu cargo");
+           EMPR1.setCargo(CG);
+
+           String DP = JOptionPane.showInputDialog("Digite o seu departamento:");
+           EMPR1.setDepto(DP);
+
+           double SL = Double.parseDouble(JOptionPane.showInputDialog("Insira o seu salário"));
+           EMPR1.setSalario(SL);
+
+           int TSVC = Integer.parseInt(JOptionPane.showInputDialog("Digite o seu tempo de serviço"));
+           EMPR1.setTempoServico(TSVC);
+
+           JOptionPane.showMessageDialog(null, "DADOS DO EMPREGADO\n"
+                   + "''''''''''''''''''''''''\n"
+                   + "NOME: "+EMPR1.getNome()+ "\n"
+                   + "MATRICULA: "+ EMPR1.getMatricula() + "\n"
+                   + "CARGO: "+EMPR1.getCargo()+ "\n"
+                   + "DEPARTAMENTO: "+EMPR1.getDepto() +"\n"
+                   + "SALÁRIO: "+EMPR1.getSalario() +"\n"
+                   + "TEMPO DE SERVIÇO: "+EMPR1.getTempoServico()+"\n");
+           

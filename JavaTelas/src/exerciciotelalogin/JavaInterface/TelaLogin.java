@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package exerciciotelalogin;
+package exerciciotelalogin.JavaInterface;
+
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -27,12 +29,15 @@ public class TelaLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField2 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        Login = new javax.swing.JTextField();
+        Senha = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
+
+        jTextField2.setText("jTextField2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -52,16 +57,24 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel3.setText("Senha:");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(60, 170, 60, 30);
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(110, 130, 150, 30);
 
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        Login.setToolTipText("");
+        Login.setActionCommand("null");
+        Login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                LoginActionPerformed(evt);
             }
         });
-        getContentPane().add(jPasswordField1);
-        jPasswordField1.setBounds(110, 170, 150, 30);
+        getContentPane().add(Login);
+        Login.setBounds(110, 130, 150, 30);
+
+        Senha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SenhaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Senha);
+        Senha.setBounds(110, 170, 150, 30);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("ENTRAR");
@@ -76,13 +89,26 @@ public class TelaLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void SenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_SenhaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        if(Login.getText().equals("123") && Senha.getText().equals("123")){
+            JOptionPane.showMessageDialog(null, "Bem vindo!");
+            setVisible(true);
+            dispose();
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Acesso negado!");
+        
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,11 +146,12 @@ public class TelaLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Login;
+    private javax.swing.JPasswordField Senha;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
