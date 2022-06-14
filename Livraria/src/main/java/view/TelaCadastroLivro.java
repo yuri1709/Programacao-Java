@@ -37,7 +37,7 @@ public class TelaCadastroLivro extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         n_edicao = new javax.swing.JTextField();
         titulo_ = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        cadastrar_ = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -60,7 +60,7 @@ public class TelaCadastroLivro extends javax.swing.JFrame {
         preco_.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         preco_.setText("Preço");
         getContentPane().add(preco_);
-        preco_.setBounds(240, 80, 40, 20);
+        preco_.setBounds(260, 170, 40, 20);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("N da edição");
@@ -78,35 +78,45 @@ public class TelaCadastroLivro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(autor_);
-        autor_.setBounds(90, 80, 100, 20);
+        autor_.setBounds(90, 80, 160, 20);
         getContentPane().add(cod_isbn_);
         cod_isbn_.setBounds(120, 220, 100, 20);
+
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextField3);
-        jTextField3.setBounds(280, 80, 80, 30);
+        jTextField3.setBounds(300, 170, 80, 30);
         getContentPane().add(n_edicao);
         n_edicao.setBounds(120, 170, 100, 20);
         getContentPane().add(titulo_);
-        titulo_.setBounds(90, 120, 100, 20);
+        titulo_.setBounds(90, 120, 160, 20);
 
-        jButton1.setText("CADASTRAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        cadastrar_.setText("CADASTRAR");
+        cadastrar_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                cadastrar_ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(100, 270, 210, 23);
+        getContentPane().add(cadastrar_);
+        cadastrar_.setBounds(100, 270, 210, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void cadastrar_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrar_ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_cadastrar_ActionPerformed
 
     private void autor_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_autor_ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_autor_ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,8 +155,8 @@ public class TelaCadastroLivro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField autor_;
+    private javax.swing.JButton cadastrar_;
     private javax.swing.JTextField cod_isbn_;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
