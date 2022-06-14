@@ -11,8 +11,9 @@ package model;
 public class Livro {
     String autor, titulo;
     int cod_ISBN;
+    int nEdicao;
     double preco;
-
+     
     public String getAutor() {
         return autor;
     }
@@ -52,5 +53,5 @@ public class Livro {
     public void setnEdicao(int nEdicao) {
         this.nEdicao = nEdicao;
     }
-    int nEdicao;
+   
 }
